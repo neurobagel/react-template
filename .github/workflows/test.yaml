@@ -22,6 +22,13 @@ jobs:
       - name: build
         run: npm install && npm run build
 
+      - name: Run end to end tests
+        uses: cypress-io/github-action@v6
+        with:
+          wait-on: http://localhost:5173
+          start: npm run preview
+          component: false
+
       - name: Upload e2e coverage artifact
         uses: actions/upload-artifact@v3
         with:
