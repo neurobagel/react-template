@@ -79,7 +79,7 @@ jobs:
           name: component-coverage
 
       - name: Install nyc
-        run: npm install nyc
+        run: npm install -g nyc
 
       - name: Merge coverage reports
         run: nyc merge e2e-coverage e2e.json && nyc merge component-coverage component.json && nyc merge . combined-coverage.json
