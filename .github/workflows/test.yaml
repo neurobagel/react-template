@@ -82,12 +82,6 @@ jobs:
         with:
           name: compCov
           path: compCov
-      
-      # TODO: remove once working
-      - name: Display structure of downloaded files
-        run: |
-          pwd
-          ls -als
 
       - name: Install nyc
         run: npm install -g nyc
@@ -105,7 +99,7 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}  # Not required for public repos
+          token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/lcov.info
           flags: tests
           name: codecov-combined  
