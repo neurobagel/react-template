@@ -1,4 +1,4 @@
-name: Run tests
+name: test
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  e2e-test:
+  e2e:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,12 +30,12 @@ jobs:
           component: false
 
       - name: Upload e2e coverage artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: e2e-coverage
           path: coverage
 
-  component-test:
+  component:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,14 +50,14 @@ jobs:
           component: true
       
       - name: Upload component coverage artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: component-coverage
           path: coverage
 
   merge-coverage:
     # Run this job only if both e2e and component tests passed
-    needs: [e2e-test, component-test]
+    needs: [e2e, component]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
