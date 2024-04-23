@@ -1,11 +1,9 @@
-import { useState } from 'react';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
-
 import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
+import MyButton from './components/MyButton';
 import './App.css';
 
 function BasicAlerts() {
@@ -19,8 +17,6 @@ function BasicAlerts() {
 }
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div>
@@ -33,9 +29,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <Button type="button" onClick={() => setCount((countInline) => countInline + 1)}>
-          count is {count}
-        </Button>
+        <MyButton />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
