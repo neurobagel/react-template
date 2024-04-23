@@ -32,7 +32,7 @@ jobs:
       - name: Upload e2e coverage artifact
         uses: actions/upload-artifact@v4
         with:
-          name: e2e-coverage
+          name: e2eCov
           path: coverage
 
   component:
@@ -52,7 +52,7 @@ jobs:
       - name: Upload component coverage artifact
         uses: actions/upload-artifact@v4
         with:
-          name: component-coverage
+          name: compCov
           path: coverage
 
   merge-coverage:
@@ -69,20 +69,23 @@ jobs:
           node-version: '20'
 
       - name: Download e2e coverage artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: e2e-coverage
+          name: e2eCov
 
       - name: Download component coverage artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: component-coverage
+          name: compCov
+
+      - name: Display structure of downloaded files
+        run: ls 
 
       - name: Install nyc
         run: npm install -g nyc
 
       - name: Merge coverage reports
-        run: nyc merge e2e-coverage e2e.json && nyc merge component-coverage component.json && nyc merge . combined-coverage.json
+        run: nyc merge e2eCov e2e.json && nyc merge compCov component.json && nyc merge . combined-coverage.json
 
       - name: Generate final coverage report
         run: nyc report --reporter=lcov --temp-dir . --report-dir ./coverage
