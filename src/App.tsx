@@ -44,9 +44,9 @@ function App() {
       <BasicAlerts />
       <h1 className="bg-red-500 text-3xl font-bold underline">Hello world!</h1>
       <div>
-      <Slider defaultValue={30} />
-      <Slider defaultValue={30} className="text-orange-600" />
-    </div>
+        <Slider defaultValue={30} />
+        <Slider defaultValue={30} className="text-orange-600" />
+      </div>
     </>
   );
 }
