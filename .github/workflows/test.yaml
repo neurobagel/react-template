@@ -93,10 +93,14 @@ jobs:
         run: npm install -g nyc
 
       - name: Merge coverage reports
-        run: nyc merge e2eCov e2e.json && nyc merge compCov component.json && nyc merge . combined-coverage.json
+        run: |
+          mkdir -p combined_coverage final_coverage
+          nyc merge e2eCov combined_coverage/e2e.json 
+          nyc merge compCov combined_coverage/component.json
+          nyc merge combined_coverage final_coverage/combined-coverage.json
 
       - name: Generate final coverage report
-        run: nyc report --reporter=lcov --temp-dir . --report-dir ./coverage
+        run: nyc report --reporter=lcov --temp-dir final_coverage --report-dir ./coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
