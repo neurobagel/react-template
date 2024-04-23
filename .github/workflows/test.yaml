@@ -72,14 +72,18 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: e2eCov
+          path: e2eCov
 
       - name: Download component coverage artifacts
         uses: actions/download-artifact@v4
         with:
           name: compCov
+          path: compCov
 
       - name: Display structure of downloaded files
-        run: ls 
+        run: |
+          pwd
+          ls -als
 
       - name: Install nyc
         run: npm install -g nyc
