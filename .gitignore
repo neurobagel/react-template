@@ -29,3 +29,8 @@ dist-ssr
 # Cypress
 cypress/screenshots
 cypress/downloads
+
+# Code coverage reports
+coverage
+.nyc_output
+

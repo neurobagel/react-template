@@ -22,6 +22,6 @@
     "./scripts/**",
     "node_modules"
   ],
-  "report-dir": "e2e-coverage",
+  "report-dir": "coverage",
   "reporter": ["json", "lcov", "json-summary"]
 }
