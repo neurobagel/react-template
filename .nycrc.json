@@ -23,5 +23,5 @@
     "node_modules"
   ],
   "report-dir": "coverage",
-  "reporter": ["json", "lcov", "json-summary"]
+  "reporter": ["lcov"]
 }
