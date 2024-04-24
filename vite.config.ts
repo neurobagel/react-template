@@ -18,6 +18,10 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
+    coverage: {
+      provider: 'istanbul',
+      reporter: ['json'],
+    },
   },
   plugins: [
     react(),
