@@ -5,7 +5,7 @@ import { MyButton } from '~/components/MyButton';
 import reactLogo from '~/assets/react.svg';
 import viteLogo from '~/assets/vite.svg';
 
-import { useBearStore } from '~/stores/bearstore';
+import { useBears, useBearActions } from '~/stores/bearstore';
 
 import './App.css';
 
@@ -20,10 +20,8 @@ function BasicAlerts() {
 }
 
 function App() {
-  const bears = useBearStore((state) => state.bears);
-  const increaseBears = useBearStore((state) => state.increasePopulation);
-  const removeBears = useBearStore((state) => state.removeAllBears);
-  const updateBears = useBearStore((state) => state.updateBears);
+  const bears = useBears();
+  const { increasePopulation, removeAllBears, updateBears } = useBearActions();
 
   return (
     <>
@@ -44,10 +42,10 @@ function App() {
       </div>
       <div className="card">
         <h1>Count of bears: {bears}</h1>
-        <button type="button" onClick={() => increaseBears(1)}>
+        <button type="button" onClick={() => increasePopulation(1)}>
           Increase population
         </button>
-        <button type="button" onClick={() => removeBears()}>
+        <button type="button" onClick={() => removeAllBears()}>
           Remove bears
         </button>
         <input onChange={(e) => updateBears(parseInt(e.currentTarget.value, 10))} value={bears} />

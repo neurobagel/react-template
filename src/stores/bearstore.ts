@@ -2,6 +2,7 @@ import { create } from 'zustand';
 
 type State = {
   bears: number;
+  actions: Action;
 };
 
 type Action = {
@@ -10,9 +11,16 @@ type Action = {
   updateBears: (bears: number) => void;
 };
 
-export const useBearStore = create<State & Action>((set) => ({
+const useBearStore = create<State>((set) => ({
   bears: 0,
-  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 }),
-  updateBears: (newBears) => set({ bears: newBears }),
+  actions: {
+    increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
+    removeAllBears: () => set({ bears: 0 }),
+    updateBears: (newBears) => set({ bears: newBears }),
+  },
 }));
+
+// See https://tkdodo.eu/blog/working-with-zustand for details on
+// why we use this structure
+export const useBears = () => useBearStore((state) => state.bears);
+export const useBearActions = () => useBearStore((state) => state.actions);
