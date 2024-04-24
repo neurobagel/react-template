@@ -1,4 +1,4 @@
-import MyButton from './MyButton';
+import { MyButton } from './MyButton';
 
 describe('My Button', () => {
   it('renders', () => {
