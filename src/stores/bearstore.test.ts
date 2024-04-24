@@ -1,9 +1,14 @@
 import { act, renderHook } from '@testing-library/react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { useBears, useBearActions } from '~/stores/bearstore';
+import { useBears, useBearActions, State, Actions } from './bearstore';
+
+type TestHookResults = {
+  bearsResult: { current: State['bears'] };
+  actionsResult: { current: Actions };
+};
 
 describe('bearstore actions', () => {
-  let result;
+  let result: TestHookResults;
 
   beforeEach(() => {
     // Reset the store state before each test
@@ -21,7 +26,7 @@ describe('bearstore actions', () => {
 
   it('should increase population', () => {
     act(() => {
-      result.actionsResult.current.increasePopulation();
+      result.actionsResult.current.increasePopulation(1);
     });
     expect(result.bearsResult.current).toBe(1);
   });
@@ -29,14 +34,14 @@ describe('bearstore actions', () => {
   it('should remove all bears', () => {
     // Add some bears before removing them
     act(() => {
-      result.actionsResult.current.increasePopulation();
+      result.actionsResult.current.increasePopulation(1);
       result.actionsResult.current.removeAllBears();
     });
     expect(result.bearsResult.current).toBe(0);
   });
 
   it('should update bears', () => {
-    const newBearCount = 5;
+    const newBearCount = 4;
     act(() => {
       result.actionsResult.current.updateBears(newBearCount);
     });
