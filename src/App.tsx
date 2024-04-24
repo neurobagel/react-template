@@ -1,9 +1,10 @@
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
-import reactLogo from './assets/react.svg';
-import viteLogo from './assets/vite.svg';
-import { MyButton } from './components/MyButton';
+import { MyButton } from '~/components/MyButton';
+import reactLogo from '~/assets/react.svg';
+import viteLogo from '~/assets/vite.svg';
+
 import './App.css';
 
 function BasicAlerts() {
