@@ -14,6 +14,7 @@
     "test:e2e": "cypress run --e2e",
     "test:component": "cypress run --component",
     "test:unit": "vitest",
+    "typecheck": "tsc --noEmit",
     "prepare": "husky install"
   },
   "dependencies": {
