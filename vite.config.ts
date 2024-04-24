@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 /* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
@@ -14,6 +15,9 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     host: true,
+  },
+  test: {
+    environment: 'jsdom',
   },
   plugins: [
     react(),

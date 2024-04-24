@@ -1,11 +1,11 @@
 import { create } from 'zustand';
 
-type State = {
+export type State = {
   bears: number;
   actions: Action;
 };
 
-type Action = {
+export type Action = {
   increasePopulation: (bears: State['bears']) => void;
   removeAllBears: () => void;
   updateBears: (bears: number) => void;
