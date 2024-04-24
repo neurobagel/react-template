@@ -5,6 +5,8 @@ import { MyButton } from '~/components/MyButton';
 import reactLogo from '~/assets/react.svg';
 import viteLogo from '~/assets/vite.svg';
 
+import { useBearStore } from '~/stores/bearstore';
+
 import './App.css';
 
 function BasicAlerts() {
@@ -18,6 +20,11 @@ function BasicAlerts() {
 }
 
 function App() {
+  const bears = useBearStore((state) => state.bears);
+  const increaseBears = useBearStore((state) => state.increasePopulation);
+  const removeBears = useBearStore((state) => state.removeAllBears);
+  const updateBears = useBearStore((state) => state.updateBears);
+
   return (
     <>
       <div>
@@ -34,6 +41,16 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+      </div>
+      <div className="card">
+        <h1>Count of bears: {bears}</h1>
+        <button type="button" onClick={() => increaseBears(1)}>
+          Increase population
+        </button>
+        <button type="button" onClick={() => removeBears()}>
+          Remove bears
+        </button>
+        <input onChange={(e) => updateBears(parseInt(e.currentTarget.value, 10))} value={bears} />
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
       <BasicAlerts />
