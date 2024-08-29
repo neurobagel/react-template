@@ -29,6 +29,7 @@
   "devDependencies": {
     "@cypress/code-coverage": "^3.12.39",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@kesills/eslint-config-airbnb-typescript": "^19.0.0",
     "@testing-library/react": "^16.0.0",
     "@types/node": "^22.1.0",
     "@types/react": "^18.3.3",
