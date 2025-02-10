@@ -7,6 +7,14 @@
 
 This template provides a minimal setup to get React working in Vite with HMR along with Cypress, Typescript, tailwind, ESLint, husky, and lint staged configured.
 
+---
+
+### **Important Note**
+
+After using this template to create your own repository, you must update the **Codecov token** in the [`tests.yaml`](https://github.com/neurobagel/react-bagel/blob/main/.github/workflows/tests.yaml) file for Codecov to work. Replace the `token` field in the [`upload coverage to Codecov`](https://github.com/neurobagel/react-bagel/blob/a84fc0a18f6c430bc69793c5ac3518d72b48059d/.github/workflows/tests.yaml#L132) job with your repository's unique Codecov token.
+
+---
+
 - Project structure
   - bulletproof react: https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md
 - Tests
