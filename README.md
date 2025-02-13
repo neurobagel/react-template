@@ -1,7 +1,8 @@
-[![codecov](https://codecov.io/gh/neurobagel/react-bagel/graph/badge.svg?token=mK0zZ2A86F)](https://codecov.io/gh/neurobagel/react-bagel)
-![Tests](https://github.com/neurobagel/react-bagel/actions/workflows/tests.yaml/badge.svg)
-![Checks](https://github.com/neurobagel/react-bagel/actions/workflows/checks.yaml/badge.svg)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Codecov](https://img.shields.io/codecov/c/github/neurobagel/react-bagel?token=mK0zZ2A86F&style=flat-square&logo=codecov)](https://codecov.io/gh/neurobagel/react-bagel)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/neurobagel/react-bagel/tests.yaml?branch=main&style=flat-square&logo=github&label=tests)](https://github.com/neurobagel/react-bagel/actions/workflows/tests.yaml)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/neurobagel/react-bagel/checks.yaml?branch=main&style=flat-square&logo=github&label=checks)](https://github.com/neurobagel/react-bagel/actions/workflows/checks.yaml)
+[![GitHub License](https://img.shields.io/github/license/neurobagel/react-bagel?style=flat-square)](LICENSE)
+
 
 # React Bagel
 
